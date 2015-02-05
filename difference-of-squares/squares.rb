@@ -7,17 +7,13 @@ class Squares
 
   def square_of_sums
     result = 0
-    for n in 1..@numbers
-      result += n
-    end
+    1.upto(@numbers) {|n| result += n}
     result**2
   end
 
   def sum_of_squares
     result = 0
-    for n in 1..@numbers
-      result += n**2
-    end
+    1.upto(@numbers) {|n| result += n**2}
     result
   end
 

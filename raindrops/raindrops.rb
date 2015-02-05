@@ -9,10 +9,7 @@ class Raindrops
         output << factors[key]
       end
     end
-    if output == ''
-      output << number.to_s
-    end
-    output
+    output.empty? ? output = number.to_s : output
   end
 
   def self.factors

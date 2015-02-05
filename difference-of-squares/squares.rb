@@ -3,12 +3,11 @@
 class Squares
   def initialize numbers
     @numbers = numbers
+    @range = 1..numbers
   end
 
   def square_of_sums
-    result = 0
-    1.upto(@numbers) {|n| result += n}
-    result**2
+    ((@range).reduce(:+))**2
   end
 
   def sum_of_squares

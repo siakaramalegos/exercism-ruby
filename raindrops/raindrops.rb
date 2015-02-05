@@ -4,26 +4,18 @@
 class Raindrops
   def self.convert number
     output=''
-    if number % 3 == 0
-      output << "Pling"
-      if number % 5 == 0
-        output << "Plang"
-        if number % 7 == 0
-          output << "Plong"
-        end
-      elsif number % 7 == 0
-        output << "Plong"
+    factors.keys.each do |key|
+      if number % key == 0
+        output << factors[key]
       end
-    elsif number % 5 == 0
-      output << "Plang"
-      if number % 7 == 0
-        output << "Plong"
-      end
-    elsif number % 7 == 0
-      output << "Plong"
-    else
+    end
+    if output == ''
       output << number.to_s
     end
     output
+  end
+
+  def self.factors
+    {3 => "Pling", 5 => "Plang", 7 => "Plong"}
   end
 end
